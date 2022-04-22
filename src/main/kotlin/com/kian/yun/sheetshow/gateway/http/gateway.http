@@ -1,0 +1,142 @@
+### POST SHEET
+POST http://{{host}}:{{gateway-port}}/api/v1/sheet
+Content-Type: application/json
+
+{
+  "name" : "하늘을 달리다",
+  "author" : "이적",
+  "creatorEmail" : "s2mos2@naver.com"
+}
+
+### GET SHEET
+GET http://{{host}}:{{gateway-port}}/api/v1/sheet/2
+
+### GET SHEET LIST
+GET http://{{host}}:{{gateway-port}}/api/v1/sheet?page=0&size=10&search=빗속에서
+
+### PUT SHEET
+PUT http://{{host}}:{{gateway-port}}/api/v1/sheet/2
+Content-Type: application/json
+
+{
+  "name" : "it is up to you",
+  "author" : "yunhwadngdng",
+  "creatorEmail" : "hello@google.com"
+}
+
+### DELETE SHEET
+DELETE http://{{host}}:{{gateway-port}}/api/v1/sheet/2
+
+### POST BAR
+POST http://{{host}}:{{gateway-port}}/api/v1/bar
+Content-Type: application/json
+
+{
+  "no" : "10",
+  "lyrics" : "네",
+  "fingeringId" : "1",
+  "sheetId" : "3"
+}
+
+### GET BAR
+GET http://{{host}}:{{gateway-port}}/api/v1/bar/2
+
+### GET BAR LIST
+GET http://{{host}}:{{gateway-port}}/api/v1/bar?page=0&size=10&order=id
+
+### PUT BAR
+PUT http://{{host}}:{{gateway-port}}/api/v1/bar/6
+Content-Type: application/json
+
+{
+  "no" : "6",
+  "lyrics" : "룰 수 없",
+  "fingeringId" : "2",
+  "sheetId" : "2"
+}
+
+### DELETE BAR
+DELETE http://{{host}}:{{gateway-port}}/api/v1/bar/2
+
+### POST FINGERING
+POST http://{{host}}:{{gateway-port}}/api/v1/fingering
+Content-Type: application/json
+
+{
+  "type" : "guitar",
+  "chord" : "CM"
+}
+
+### GET FINGERING
+GET http://{{host}}:{{gateway-port}}/api/v1/fingering/2
+
+### GET FINGERING LIST
+GET http://{{host}}:{{gateway-port}}/api/v1/fingering?page=0&size=10
+
+### PUT FINGERING
+PUT http://{{host}}:{{gateway-port}}/api/v1/fingering/2
+Content-Type: application/json
+
+{
+  "type" : "piano",
+  "chord" : "2"
+}
+
+### DELETE FINGERING
+DELETE http://{{host}}:{{gateway-port}}/api/v1/fingering/2
+
+### POST NOTE
+POST http://{{host}}:{{gateway-port}}/api/v1/note
+Content-Type: application/json
+
+{
+  "line" : "1",
+  "space" : "2",
+  "fingeringId" : "3"
+}
+
+### GET NOTE
+GET http://{{host}}:{{gateway-port}}/api/v1/note/2
+
+### GET NOTE LIST
+GET http://{{host}}:{{gateway-port}}/api/v1/note?page=0&size=10
+
+### PUT NOTE
+PUT http://{{host}}:{{gateway-port}}/api/v1/note/2
+Content-Type: application/json
+
+{
+  "line" : "3",
+  "space" : "4",
+  "fingeringId" : "6"
+}
+
+### DELETE NOTE
+DELETE http://{{host}}:{{gateway-port}}/api/v1/note/2
+
+### POST MEMBER
+POST http://{{host}}:{{gateway-port}}/api/v1/member
+Content-Type: application/json
+
+{
+  "email" : "hello@world.com",
+  "password" : "123456789"
+}
+
+### GET MEMBER
+GET http://{{host}}:{{gateway-port}}/api/v1/member/hello@world.com
+
+### GET MEMBER LIST
+GET http://{{host}}:{{gateway-port}}/api/v1/member?page=0&size=10
+
+### PUT MEMBER
+PUT http://{{host}}:{{gateway-port}}/api/v1/member
+Content-Type: application/json
+
+{
+  "email" : "hello@world.com",
+  "password" : "abcdefghijk"
+}
+
+### DELETE MEMBER
+DELETE http://{{host}}:{{gateway-port}}/api/v1/member/hello@world.com
