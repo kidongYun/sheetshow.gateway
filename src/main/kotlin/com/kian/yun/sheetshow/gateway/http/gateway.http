@@ -3,8 +3,8 @@ POST http://{{host}}:{{gateway-port}}/api/v1/sheet
 Content-Type: application/json
 
 {
-  "name" : "별보러 가자",
-  "author" : "적재",
+  "name" : "rain drop",
+  "author" : "iu",
   "creatorEmail" : "s2mos2@naver.com"
 }
 
@@ -47,10 +47,10 @@ POST http://{{host}}:{{gateway-port}}/api/v1/bar
 Content-Type: application/json
 
 {
-  "no" : "10",
-  "lyrics" : "김치찌래 보러 가자",
+  "no" : "",
+  "lyrics" : "",
   "fingeringId" : "1",
-  "sheetId" : "3"
+  "sheetId" : "6"
 }
 
 ### GET BAR
@@ -66,27 +66,27 @@ Content-Type: application/json
 {
   "conditions" : [
     {
-      "target" : "lyrics",
-      "values" : ["거리", "가자"],
-      "queryOption" : "like"
+      "target" : "sheetId",
+      "values" : ["6"],
+      "queryOption" : "equal"
     }
   ],
-  "conditionOption" : "or"
+  "conditionOption" : "and"
 }
 
 ### PUT BAR
-PUT http://{{host}}:{{gateway-port}}/api/v1/bar/6
+PUT http://{{host}}:{{gateway-port}}/api/v1/bar/7
 Content-Type: application/json
 
 {
-  "no" : "6",
-  "lyrics" : "룰 수 없",
-  "fingeringId" : "2",
-  "sheetId" : "2"
+  "no" : "1",
+  "lyrics" : "",
+  "fingeringId" : "5",
+  "sheetId" : "6"
 }
 
 ### DELETE BAR
-DELETE http://{{host}}:{{gateway-port}}/api/v1/bar/2
+DELETE http://{{host}}:{{gateway-port}}/api/v1/bar/6
 
 ### POST FINGERING
 POST http://{{host}}:{{gateway-port}}/api/v1/fingering
@@ -94,7 +94,7 @@ Content-Type: application/json
 
 {
   "type" : "guitar",
-  "chord" : "CM"
+  "chord" : "C"
 }
 
 ### GET FINGERING
