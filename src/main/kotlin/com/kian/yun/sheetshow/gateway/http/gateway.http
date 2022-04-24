@@ -3,8 +3,8 @@ POST http://{{host}}:{{gateway-port}}/api/v1/sheet
 Content-Type: application/json
 
 {
-  "name" : "하늘을 달리다",
-  "author" : "이적",
+  "name" : "별보러 가자",
+  "author" : "적재",
   "creatorEmail" : "s2mos2@naver.com"
 }
 
@@ -12,7 +12,22 @@ Content-Type: application/json
 GET http://{{host}}:{{gateway-port}}/api/v1/sheet/2
 
 ### GET SHEET LIST
-GET http://{{host}}:{{gateway-port}}/api/v1/sheet?page=0&size=10&search=빗속에서
+GET http://{{host}}:{{gateway-port}}/api/v1/sheet?page=0&size=10
+
+### QUERY ALL SHEET
+POST http://{{host}}:{{gateway-port}}/api/v1/sheet/query?page=0&size=10
+Content-Type: application/json
+
+{
+  "conditions" : [
+    {
+      "target" : "name",
+      "values" : ["별보러", "가자"],
+      "queryOption" : "like"
+    }
+  ],
+  "conditionOption" : "or"
+}
 
 ### PUT SHEET
 PUT http://{{host}}:{{gateway-port}}/api/v1/sheet/2
@@ -33,7 +48,7 @@ Content-Type: application/json
 
 {
   "no" : "10",
-  "lyrics" : "네",
+  "lyrics" : "김치찌래 보러 가자",
   "fingeringId" : "1",
   "sheetId" : "3"
 }
@@ -43,6 +58,21 @@ GET http://{{host}}:{{gateway-port}}/api/v1/bar/2
 
 ### GET BAR LIST
 GET http://{{host}}:{{gateway-port}}/api/v1/bar?page=0&size=10&order=id
+
+### QUERY ALL BAR
+POST http://{{host}}:{{gateway-port}}/api/v1/bar/query?page=0&size=10
+Content-Type: application/json
+
+{
+  "conditions" : [
+    {
+      "target" : "lyrics",
+      "values" : ["거리", "가자"],
+      "queryOption" : "like"
+    }
+  ],
+  "conditionOption" : "or"
+}
 
 ### PUT BAR
 PUT http://{{host}}:{{gateway-port}}/api/v1/bar/6
@@ -73,6 +103,21 @@ GET http://{{host}}:{{gateway-port}}/api/v1/fingering/2
 ### GET FINGERING LIST
 GET http://{{host}}:{{gateway-port}}/api/v1/fingering?page=0&size=10
 
+### QUERY ALL FINGERING
+POST http://{{host}}:{{gateway-port}}/api/v1/fingering/query?page=0&size=10
+Content-Type: application/json
+
+{
+  "conditions" : [
+    {
+      "target" : "type",
+      "values" : ["gui", "pi"],
+      "queryOption" : "like"
+    }
+  ],
+  "conditionOption" : "or"
+}
+
 ### PUT FINGERING
 PUT http://{{host}}:{{gateway-port}}/api/v1/fingering/2
 Content-Type: application/json
@@ -100,6 +145,21 @@ GET http://{{host}}:{{gateway-port}}/api/v1/note/2
 
 ### GET NOTE LIST
 GET http://{{host}}:{{gateway-port}}/api/v1/note?page=0&size=10
+
+### QUERY ALL NOTE
+POST http://{{host}}:{{port}}/api/v1/note/query?page=0&size=10
+Content-Type: application/json
+
+{
+  "conditions" : [
+    {
+      "target" : "name",
+      "values" : ["별보러", "가자"],
+      "queryOption" : "like"
+    }
+  ],
+  "conditionOption" : "or"
+}
 
 ### PUT NOTE
 PUT http://{{host}}:{{gateway-port}}/api/v1/note/2
