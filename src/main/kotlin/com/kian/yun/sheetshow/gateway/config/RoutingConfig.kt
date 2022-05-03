@@ -8,29 +8,34 @@ import org.springframework.context.annotation.Configuration
 
 @Configuration
 class RoutingConfig {
-    private val memberModuleUri: String = "http://localhost:8100/"
-    private val sheetModuleUri: String = "http://localhost:8200/"
+    private val memberModuleEndpoint: String = "http://localhost:8100/"
+    private val sheetModuleEndpoint: String = "http://localhost:8200/"
+    private val lyricrapingModuleEndpoint: String = "http://localhost:8300/"
     @Bean
     fun routeLocator(builder: RouteLocatorBuilder): RouteLocator = builder.routes {
         route {
             path("/api/v1/sheet/**")
-            uri(sheetModuleUri)
+            uri(sheetModuleEndpoint)
         }
         route {
             path("/api/v1/bar/**")
-            uri(sheetModuleUri)
+            uri(sheetModuleEndpoint)
         }
         route {
             path("/api/v1/fingering/**")
-            uri(sheetModuleUri)
+            uri(sheetModuleEndpoint)
         }
         route {
             path("/api/v1/note/**")
-            uri(sheetModuleUri)
+            uri(sheetModuleEndpoint)
         }
         route {
             path("/api/v1/member/**")
-            uri(memberModuleUri)
+            uri(memberModuleEndpoint)
+        }
+        route {
+            path("/api/v1/lyrics/**")
+            uri(lyricrapingModuleEndpoint)
         }
     }
 }

@@ -203,3 +203,6 @@ Content-Type: application/json
 
 ### DELETE MEMBER
 DELETE http://{{host}}:{{port}}/api/v1/member/hello@world.com
+
+### SEARCH LYRICS
+GET http://{{host}}:{{port}}/api/v1/lyrics/search/로이킴+영원한+건+없지만
