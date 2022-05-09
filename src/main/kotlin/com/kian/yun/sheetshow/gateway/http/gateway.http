@@ -56,6 +56,14 @@ Content-Type: application/json
   "sheetId" : "6"
 }
 
+### POST BAR LIST BY EL
+POST http://{{host}}:{{port}}/api/v1/bar/el
+Content-Type: application/json
+
+{
+  "barEl" : "|<>Heart beats fast Colors and promises How to be brave How can I love when I'm afraid to fall Watching you stand alone All of my doubt suddenly goes away somehow One step closer [Chorus] I have died everyday waiting for you Darling don't be afraid I have loved you For a thousand years I'll love you for a thousand more Time stands still Beauty in all she is I will be brave I will not let anything take away Standing in front of me Every breath Every hour has come to this One step closer [Chorus] I have died everyday waiting for you Darling don't be afraid I have loved you For a thousand years I'll love you for a thousand more And all along I believed I would find you Time has brought your heart to me I have loved you for a thousand years I'll love you for a thousand more One step closer One step closer [Chorus] I have died everyday waiting for you Darling don't be afraid I have loved you For a thousand years I'll love you for a thousand more And all al"
+}
+
 ### GET BAR
 GET http://{{host}}:{{port}}/api/v1/bar/2
 
@@ -97,7 +105,17 @@ Content-Type: application/json
 
 {
   "type" : "guitar",
-  "chord" : "Am"
+  "chord" : "Em",
+  "notes" : [
+    {
+      "line" : "5",
+      "space" : "2"
+    },
+    {
+      "line" : "3",
+      "space" : "7"
+    }
+  ]
 }
 
 ### GET FINGERING
@@ -205,4 +223,4 @@ Content-Type: application/json
 DELETE http://{{host}}:{{port}}/api/v1/member/hello@world.com
 
 ### SEARCH LYRICS
-GET http://{{host}}:{{port}}/api/v1/lyrics/search/로이킴+영원한+건+없지만
+GET http://{{host}}:{{port}}/api/v1/lyrics/search/a+thousand+years
