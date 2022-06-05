@@ -105,7 +105,7 @@ Content-Type: application/json
 
 {
   "type" : "guitar",
-  "chord" : "Em",
+  "chord" : "Dsus4",
   "notes" : [
     {
       "line" : "5",
